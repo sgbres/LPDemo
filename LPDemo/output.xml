@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200911 10:22:27.184" rpa="false">
+<suite id="s1" name="LPDemo" source="C:\Users\BreslinS\eclipse-workspace\LPDemo">
+<suite id="s1-s1" name="LPDemoTestSuite" source="C:\Users\BreslinS\eclipse-workspace\LPDemo\LPDemoTestSuite">
+<suite id="s1-s1-s1" name="LPDemo GetInTouchTests" source="C:\Users\BreslinS\eclipse-workspace\LPDemo\LPDemoTestSuite\LPDemo_GetInTouchTests.robot">
+<test id="s1-s1-s1-t1" name="Get In Touch E2E">
+<kw name="Open Browser To Home Page" library="LPDemoResource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LP_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:27.807" level="INFO">Opening browser 'Firefox' to base url 'https://learningpool.com/'.</msg>
+<msg timestamp="20200911 10:22:27.810" level="INFO">Firefox driver log is always forced to to: C:\Users\BreslinS\eclipse-workspace\LPDemo\geckodriver-1.log</msg>
+<status status="PASS" starttime="20200911 10:22:27.806" endtime="20200911 10:22:39.030"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200911 10:22:39.030" endtime="20200911 10:22:39.531"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>elearning at Learning Pool - Innovation. Passion. Learning.</arg>
+</arguments>
+<msg timestamp="20200911 10:22:39.564" level="INFO">Page title is 'elearning at Learning Pool - Innovation. Passion. Learning.'.</msg>
+<status status="PASS" starttime="20200911 10:22:39.532" endtime="20200911 10:22:39.565"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:27.806" endtime="20200911 10:22:39.566"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${FIRST_NAME}</var>
+</assign>
+<msg timestamp="20200911 10:22:39.569" level="INFO">${FIRST_NAME} = DPsjDl</msg>
+<status status="PASS" starttime="20200911 10:22:39.567" endtime="20200911 10:22:39.569"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${LAST_NAME}</var>
+</assign>
+<msg timestamp="20200911 10:22:39.571" level="INFO">${LAST_NAME} = PfHcUnkH</msg>
+<status status="PASS" starttime="20200911 10:22:39.570" endtime="20200911 10:22:39.572"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>${FIRST_NAME}</arg>
+<arg>${EMAIL_DOMAIN}</arg>
+</arguments>
+<assign>
+<var>${EMAIL}</var>
+</assign>
+<msg timestamp="20200911 10:22:39.574" level="INFO">${EMAIL} = DPsjDl@mycompany.com</msg>
+<status status="PASS" starttime="20200911 10:22:39.573" endtime="20200911 10:22:39.575"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>11</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${PHONE_NUMBER}</var>
+</assign>
+<msg timestamp="20200911 10:22:39.577" level="INFO">${PHONE_NUMBER} = 09235370335</msg>
+<status status="PASS" starttime="20200911 10:22:39.575" endtime="20200911 10:22:39.577"></status>
+</kw>
+<kw name="Navigate to Get in touch" library="LPDemoResource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="menu-first-menu"]/div/button</arg>
+</arguments>
+<msg timestamp="20200911 10:22:39.581" level="INFO">Clicking element 'xpath://*[@id="menu-first-menu"]/div/button'.</msg>
+<status status="PASS" starttime="20200911 10:22:39.580" endtime="20200911 10:22:40.704"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE_CONTACT_US}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:40.729" level="INFO">Page title is 'Contact Us - Learning Pool'.</msg>
+<status status="PASS" starttime="20200911 10:22:40.705" endtime="20200911 10:22:40.730"></status>
+</kw>
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:22:41.886" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:22:40.961" endtime="20200911 10:22:41.886"></status>
+</kw>
+<msg timestamp="20200911 10:22:41.965" level="FAIL">Element with locator 'xpath://*[contains (text(), 'Accept')]' not found.</msg>
+<status status="FAIL" starttime="20200911 10:22:40.733" endtime="20200911 10:22:41.965"></status>
+</kw>
+<msg timestamp="20200911 10:22:41.966" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:22:40.732" endtime="20200911 10:22:41.966"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:22:41.967" endtime="20200911 10:22:41.968"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:40.730" endtime="20200911 10:22:41.968"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:39.578" endtime="20200911 10:22:41.969"></status>
+</kw>
+<kw name="Book a call back" library="LPDemoResource">
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<msg timestamp="20200911 10:22:42.006" level="INFO">Element 'xpath://*[contains (text(), 'Accept')]' is displayed.</msg>
+<status status="PASS" starttime="20200911 10:22:41.971" endtime="20200911 10:22:42.007"></status>
+</kw>
+<msg timestamp="20200911 10:22:42.007" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20200911 10:22:41.970" endtime="20200911 10:22:42.007"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<msg timestamp="20200911 10:22:42.009" level="INFO">Clicking element 'id:hs-eu-confirmation-button'.</msg>
+<status status="PASS" starttime="20200911 10:22:42.008" endtime="20200911 10:22:42.318"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:42.008" endtime="20200911 10:22:42.318"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:41.970" endtime="20200911 10:22:42.319"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:22:42.319" endtime="20200911 10:22:42.636"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:22:42.637" endtime="20200911 10:22:43.174"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<msg timestamp="20200911 10:22:43.175" level="INFO">Clicking element 'xpath://a[contains (text(), 'Book a call back')]'.</msg>
+<status status="PASS" starttime="20200911 10:22:43.174" endtime="20200911 10:22:43.491"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:41.969" endtime="20200911 10:22:43.492"></status>
+</kw>
+<kw name="Verify Form Header" library="LPDemoResource">
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${VALIDATE_HEADER}</var>
+</assign>
+<msg timestamp="20200911 10:22:43.857" level="INFO">${VALIDATE_HEADER} = Start your learning journey</msg>
+<status status="PASS" starttime="20200911 10:22:43.496" endtime="20200911 10:22:43.857"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${VALIDATE_HEADER}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:22:43.858" endtime="20200911 10:22:43.859"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:43.493" endtime="20200911 10:22:43.861"></status>
+</kw>
+<kw name="Close Request a Demo" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<msg timestamp="20200911 10:22:44.169" level="INFO">Element 'class:leadinModal-close' is displayed.</msg>
+<status status="PASS" starttime="20200911 10:22:43.868" endtime="20200911 10:22:44.170"></status>
+</kw>
+<msg timestamp="20200911 10:22:44.170" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20200911 10:22:43.867" endtime="20200911 10:22:44.171"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<msg timestamp="20200911 10:22:44.173" level="INFO">Clicking element 'class:leadinModal-close'.</msg>
+<status status="PASS" starttime="20200911 10:22:44.172" endtime="20200911 10:22:44.749"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:44.171" endtime="20200911 10:22:44.749"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:43.864" endtime="20200911 10:22:44.750"></status>
+</kw>
+<kw name="Input First Name" library="LPDemoResource">
+<arguments>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<kw name="Close Request a Demo" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:22:45.473" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:22:44.981" endtime="20200911 10:22:45.473"></status>
+</kw>
+<msg timestamp="20200911 10:22:45.476" level="FAIL">Element with locator 'class:leadinModal-close' not found.</msg>
+<status status="FAIL" starttime="20200911 10:22:44.753" endtime="20200911 10:22:45.476"></status>
+</kw>
+<msg timestamp="20200911 10:22:45.477" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:22:44.752" endtime="20200911 10:22:45.477"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:22:45.478" endtime="20200911 10:22:45.479"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:44.751" endtime="20200911 10:22:45.479"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>id:hs-form-iframe-0</arg>
+</arguments>
+<msg timestamp="20200911 10:22:45.481" level="INFO">Selecting frame 'id:hs-form-iframe-0'.</msg>
+<status status="PASS" starttime="20200911 10:22:45.480" endtime="20200911 10:22:45.626"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:firstname</arg>
+<arg>${first_name}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:45.628" level="INFO">Typing text 'DPsjDl' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20200911 10:22:45.627" endtime="20200911 10:22:45.744"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:44.750" endtime="20200911 10:22:45.745"></status>
+</kw>
+<kw name="Input Last Name" library="LPDemoResource">
+<arguments>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:lastname</arg>
+<arg>${last_name}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:45.749" level="INFO">Typing text 'PfHcUnkH' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20200911 10:22:45.747" endtime="20200911 10:22:45.921"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:45.746" endtime="20200911 10:22:45.924"></status>
+</kw>
+<kw name="Input Email" library="LPDemoResource">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:45.932" level="INFO">Typing text 'DPsjDl@mycompany.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20200911 10:22:45.929" endtime="20200911 10:22:46.218"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:45.926" endtime="20200911 10:22:46.221"></status>
+</kw>
+<kw name="Input Phone Number" library="LPDemoResource">
+<arguments>
+<arg>${PHONE_NUMBER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:phone</arg>
+<arg>${phone_number}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:46.227" level="INFO">Typing text '09235370335' into text field 'name:phone'.</msg>
+<status status="PASS" starttime="20200911 10:22:46.226" endtime="20200911 10:22:46.392"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:46.222" endtime="20200911 10:22:46.392"></status>
+</kw>
+<kw name="Input Job title" library="LPDemoResource">
+<arguments>
+<arg>${JOB_TITLE}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:jobtitle</arg>
+<arg>${job_title}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:46.394" level="INFO">Typing text 'Automation Engineer' into text field 'name:jobtitle'.</msg>
+<status status="PASS" starttime="20200911 10:22:46.394" endtime="20200911 10:22:46.517"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:46.393" endtime="20200911 10:22:46.519"></status>
+</kw>
+<kw name="Input Company" library="LPDemoResource">
+<arguments>
+<arg>${COMPANY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:company</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:46.526" level="INFO">Typing text 'testCompany' into text field 'name:company'.</msg>
+<status status="PASS" starttime="20200911 10:22:46.524" endtime="20200911 10:22:46.711"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:46.520" endtime="20200911 10:22:46.713"></status>
+</kw>
+<kw name="Input Your Message" library="LPDemoResource">
+<arguments>
+<arg>${YOUR_MESSAGE}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:write_your_message_here_</arg>
+<arg>${your_message}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:46.716" level="INFO">Typing text 'Hope your enjoying this demo!' into text field 'name:write_your_message_here_'.</msg>
+<status status="PASS" starttime="20200911 10:22:46.715" endtime="20200911 10:22:46.887"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:46.714" endtime="20200911 10:22:46.887"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200911 10:22:51.889" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200911 10:22:46.888" endtime="20200911 10:22:51.889"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200911 10:22:51.890" endtime="20200911 10:22:53.331"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:27.804" endtime="20200911 10:22:53.331" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="Get In Touch Blank Form Submission">
+<kw name="Open Browser To Home Page" library="LPDemoResource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LP_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200911 10:22:53.335" level="INFO">Opening browser 'Firefox' to base url 'https://learningpool.com/'.</msg>
+<msg timestamp="20200911 10:22:53.337" level="INFO">Firefox driver log is always forced to to: C:\Users\BreslinS\eclipse-workspace\LPDemo\geckodriver-2.log</msg>
+<status status="PASS" starttime="20200911 10:22:53.334" endtime="20200911 10:23:03.104"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200911 10:23:03.105" endtime="20200911 10:23:03.554"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>elearning at Learning Pool - Innovation. Passion. Learning.</arg>
+</arguments>
+<msg timestamp="20200911 10:23:03.558" level="INFO">Page title is 'elearning at Learning Pool - Innovation. Passion. Learning.'.</msg>
+<status status="PASS" starttime="20200911 10:23:03.554" endtime="20200911 10:23:03.558"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:53.333" endtime="20200911 10:23:03.559"></status>
+</kw>
+<kw name="Navigate to Get a free demo" library="LPDemoResource">
+<kw name="Navigate to Get in touch" library="LPDemoResource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="menu-first-menu"]/div/button</arg>
+</arguments>
+<msg timestamp="20200911 10:23:03.562" level="INFO">Clicking element 'xpath://*[@id="menu-first-menu"]/div/button'.</msg>
+<status status="PASS" starttime="20200911 10:23:03.561" endtime="20200911 10:23:05.816"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE_CONTACT_US}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:05.840" level="INFO">Page title is 'Contact Us - Learning Pool'.</msg>
+<status status="PASS" starttime="20200911 10:23:05.817" endtime="20200911 10:23:05.841"></status>
+</kw>
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<msg timestamp="20200911 10:23:05.935" level="INFO">Element 'xpath://*[contains (text(), 'Accept')]' is displayed.</msg>
+<status status="PASS" starttime="20200911 10:23:05.849" endtime="20200911 10:23:05.936"></status>
+</kw>
+<msg timestamp="20200911 10:23:05.937" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20200911 10:23:05.846" endtime="20200911 10:23:05.937"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<msg timestamp="20200911 10:23:05.943" level="INFO">Clicking element 'id:hs-eu-confirmation-button'.</msg>
+<status status="PASS" starttime="20200911 10:23:05.940" endtime="20200911 10:23:06.345"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:05.938" endtime="20200911 10:23:06.346"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:05.842" endtime="20200911 10:23:06.347"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:03.560" endtime="20200911 10:23:06.348"></status>
+</kw>
+<kw name="Book a call back" library="LPDemoResource">
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:23:06.511" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:23:06.383" endtime="20200911 10:23:06.511"></status>
+</kw>
+<msg timestamp="20200911 10:23:06.513" level="FAIL">The element 'xpath://*[contains (text(), 'Accept')]' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20200911 10:23:06.353" endtime="20200911 10:23:06.513"></status>
+</kw>
+<msg timestamp="20200911 10:23:06.514" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:23:06.352" endtime="20200911 10:23:06.514"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:06.515" endtime="20200911 10:23:06.518"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:06.351" endtime="20200911 10:23:06.520"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:06.522" endtime="20200911 10:23:07.285"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:07.286" endtime="20200911 10:23:07.465"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<msg timestamp="20200911 10:23:07.466" level="INFO">Clicking element 'xpath://a[contains (text(), 'Book a call back')]'.</msg>
+<status status="PASS" starttime="20200911 10:23:07.465" endtime="20200911 10:23:07.607"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:06.349" endtime="20200911 10:23:07.608"></status>
+</kw>
+<kw name="Verify Form Header" library="LPDemoResource">
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${VALIDATE_HEADER}</var>
+</assign>
+<msg timestamp="20200911 10:23:07.846" level="INFO">${VALIDATE_HEADER} = Start your learning journey</msg>
+<status status="PASS" starttime="20200911 10:23:07.616" endtime="20200911 10:23:07.846"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${VALIDATE_HEADER}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:07.847" endtime="20200911 10:23:07.848"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:07.611" endtime="20200911 10:23:07.849"></status>
+</kw>
+<kw name="Close Request a Demo" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:23:08.378" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:23:07.968" endtime="20200911 10:23:08.378"></status>
+</kw>
+<msg timestamp="20200911 10:23:08.379" level="FAIL">The element 'class:leadinModal-close' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20200911 10:23:07.850" endtime="20200911 10:23:08.380"></status>
+</kw>
+<msg timestamp="20200911 10:23:08.380" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:23:07.850" endtime="20200911 10:23:08.380"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:08.380" endtime="20200911 10:23:08.381"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:07.849" endtime="20200911 10:23:08.381"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:03.559" endtime="20200911 10:23:08.382"></status>
+</kw>
+<kw name="Click Submit" library="LPDemoResource">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>id:hs-form-iframe-0</arg>
+</arguments>
+<msg timestamp="20200911 10:23:08.383" level="INFO">Selecting frame 'id:hs-form-iframe-0'.</msg>
+<status status="PASS" starttime="20200911 10:23:08.383" endtime="20200911 10:23:08.480"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@value="Submit"]</arg>
+</arguments>
+<msg timestamp="20200911 10:23:08.481" level="INFO">Clicking element 'xpath://input[@value="Submit"]'.</msg>
+<status status="PASS" starttime="20200911 10:23:08.480" endtime="20200911 10:23:09.328"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:08.382" endtime="20200911 10:23:09.329"></status>
+</kw>
+<kw name="Assert Complete All Fields" library="LPDemoResource">
+<arguments>
+<arg>${ERROR_COMPLETE_ALL_FIELDS_LOCATOR}</arg>
+<arg>${ERROR_COMPLETE_ALL_REQUIRED_FIELDS}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ERROR_COMPLETE_ALL_FIELDS_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${VALIDATE_HEADER}</var>
+</assign>
+<msg timestamp="20200911 10:23:09.452" level="INFO">${VALIDATE_HEADER} = Please complete all required fields.</msg>
+<status status="PASS" starttime="20200911 10:23:09.332" endtime="20200911 10:23:09.452"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${VALIDATE_HEADER}</arg>
+<arg>${ERROR_COMPLETE_ALL_REQUIRED_FIELDS}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:09.453" endtime="20200911 10:23:09.454"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:09.329" endtime="20200911 10:23:09.455"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200911 10:23:09.456" endtime="20200911 10:23:10.862"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:22:53.333" endtime="20200911 10:23:10.863" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="Get In Touch Invalid Email Data">
+<kw name="Open Browser To Home Page" library="LPDemoResource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LP_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:10.866" level="INFO">Opening browser 'Firefox' to base url 'https://learningpool.com/'.</msg>
+<msg timestamp="20200911 10:23:10.867" level="INFO">Firefox driver log is always forced to to: C:\Users\BreslinS\eclipse-workspace\LPDemo\geckodriver-3.log</msg>
+<status status="PASS" starttime="20200911 10:23:10.866" endtime="20200911 10:23:21.273"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200911 10:23:21.274" endtime="20200911 10:23:21.619"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>elearning at Learning Pool - Innovation. Passion. Learning.</arg>
+</arguments>
+<msg timestamp="20200911 10:23:21.659" level="INFO">Page title is 'elearning at Learning Pool - Innovation. Passion. Learning.'.</msg>
+<status status="PASS" starttime="20200911 10:23:21.622" endtime="20200911 10:23:21.659"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:10.865" endtime="20200911 10:23:21.660"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${FIRST_NAME}</var>
+</assign>
+<msg timestamp="20200911 10:23:21.661" level="INFO">${FIRST_NAME} = GTeCbN</msg>
+<status status="PASS" starttime="20200911 10:23:21.660" endtime="20200911 10:23:21.662"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${LAST_NAME}</var>
+</assign>
+<msg timestamp="20200911 10:23:21.663" level="INFO">${LAST_NAME} = yJqtSBIk</msg>
+<status status="PASS" starttime="20200911 10:23:21.662" endtime="20200911 10:23:21.664"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>11</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${PHONE_NUMBER}</var>
+</assign>
+<msg timestamp="20200911 10:23:21.665" level="INFO">${PHONE_NUMBER} = 09872360451</msg>
+<status status="PASS" starttime="20200911 10:23:21.664" endtime="20200911 10:23:21.666"></status>
+</kw>
+<kw name="Navigate to Get a free demo" library="LPDemoResource">
+<kw name="Navigate to Get in touch" library="LPDemoResource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="menu-first-menu"]/div/button</arg>
+</arguments>
+<msg timestamp="20200911 10:23:21.670" level="INFO">Clicking element 'xpath://*[@id="menu-first-menu"]/div/button'.</msg>
+<status status="PASS" starttime="20200911 10:23:21.669" endtime="20200911 10:23:22.668"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE_CONTACT_US}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:22.674" level="INFO">Page title is 'Contact Us - Learning Pool'.</msg>
+<status status="PASS" starttime="20200911 10:23:22.669" endtime="20200911 10:23:22.675"></status>
+</kw>
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:23:23.337" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:23:22.760" endtime="20200911 10:23:23.339"></status>
+</kw>
+<msg timestamp="20200911 10:23:23.343" level="FAIL">Element with locator 'xpath://*[contains (text(), 'Accept')]' not found.</msg>
+<status status="FAIL" starttime="20200911 10:23:22.678" endtime="20200911 10:23:23.344"></status>
+</kw>
+<msg timestamp="20200911 10:23:23.345" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:23:22.677" endtime="20200911 10:23:23.346"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:23.348" endtime="20200911 10:23:23.352"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:22.675" endtime="20200911 10:23:23.353"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:21.668" endtime="20200911 10:23:23.354"></status>
+</kw>
+<kw name="Book a call back" library="LPDemoResource">
+<kw name="Click Accept Cookies" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[contains (text(), 'Accept')]</arg>
+</arguments>
+<msg timestamp="20200911 10:23:23.722" level="INFO">Element 'xpath://*[contains (text(), 'Accept')]' is displayed.</msg>
+<status status="PASS" starttime="20200911 10:23:23.359" endtime="20200911 10:23:23.724"></status>
+</kw>
+<msg timestamp="20200911 10:23:23.726" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20200911 10:23:23.358" endtime="20200911 10:23:23.727"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:hs-eu-confirmation-button</arg>
+</arguments>
+<msg timestamp="20200911 10:23:23.732" level="INFO">Clicking element 'id:hs-eu-confirmation-button'.</msg>
+<status status="PASS" starttime="20200911 10:23:23.731" endtime="20200911 10:23:24.446"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:23.728" endtime="20200911 10:23:24.446"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:23.356" endtime="20200911 10:23:24.448"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:24.448" endtime="20200911 10:23:25.128"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:25.129" endtime="20200911 10:23:25.338"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[contains (text(), 'Book a call back')]</arg>
+</arguments>
+<msg timestamp="20200911 10:23:25.339" level="INFO">Clicking element 'xpath://a[contains (text(), 'Book a call back')]'.</msg>
+<status status="PASS" starttime="20200911 10:23:25.339" endtime="20200911 10:23:25.475"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:23.355" endtime="20200911 10:23:25.478"></status>
+</kw>
+<kw name="Verify Form Header" library="LPDemoResource">
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${FORM_HEADER_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${VALIDATE_HEADER}</var>
+</assign>
+<msg timestamp="20200911 10:23:25.913" level="INFO">${VALIDATE_HEADER} = Start your learning journey</msg>
+<status status="PASS" starttime="20200911 10:23:25.488" endtime="20200911 10:23:25.914"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${VALIDATE_HEADER}</arg>
+<arg>${FORM_HEADER}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:25.915" endtime="20200911 10:23:25.916"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:25.481" endtime="20200911 10:23:25.917"></status>
+</kw>
+<kw name="Close Request a Demo" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<msg timestamp="20200911 10:23:26.270" level="INFO">Element 'class:leadinModal-close' is displayed.</msg>
+<status status="PASS" starttime="20200911 10:23:25.920" endtime="20200911 10:23:26.270"></status>
+</kw>
+<msg timestamp="20200911 10:23:26.271" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20200911 10:23:25.919" endtime="20200911 10:23:26.272"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<msg timestamp="20200911 10:23:26.276" level="INFO">Clicking element 'class:leadinModal-close'.</msg>
+<status status="PASS" starttime="20200911 10:23:26.275" endtime="20200911 10:23:27.265"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:26.273" endtime="20200911 10:23:27.265"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:25.918" endtime="20200911 10:23:27.266"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:21.666" endtime="20200911 10:23:27.266"></status>
+</kw>
+<kw name="Input Form Data" library="LPDemoResource">
+<arguments>
+<arg>${FIRST_NAME}</arg>
+<arg>${LAST_NAME}</arg>
+<arg>${INVALID_EMAIL}</arg>
+<arg>${PHONE_NUMBER}</arg>
+<arg>${JOB_TITLE}</arg>
+<arg>${COMPANY}</arg>
+<arg>${YOUR_MESSAGE}</arg>
+</arguments>
+<kw name="Input First Name" library="LPDemoResource">
+<arguments>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<kw name="Close Request a Demo" library="LPDemoResource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<assign>
+<var>${present}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200911 10:23:27.711" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200911 10:23:27.322" endtime="20200911 10:23:27.711"></status>
+</kw>
+<msg timestamp="20200911 10:23:27.713" level="FAIL">Element with locator 'class:leadinModal-close' not found.</msg>
+<status status="FAIL" starttime="20200911 10:23:27.271" endtime="20200911 10:23:27.714"></status>
+</kw>
+<msg timestamp="20200911 10:23:27.714" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20200911 10:23:27.270" endtime="20200911 10:23:27.715"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>class:leadinModal-close</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:27.716" endtime="20200911 10:23:27.718"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:27.269" endtime="20200911 10:23:27.719"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>id:hs-form-iframe-0</arg>
+</arguments>
+<msg timestamp="20200911 10:23:27.724" level="INFO">Selecting frame 'id:hs-form-iframe-0'.</msg>
+<status status="PASS" starttime="20200911 10:23:27.720" endtime="20200911 10:23:27.795"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:firstname</arg>
+<arg>${first_name}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:27.797" level="INFO">Typing text 'GTeCbN' into text field 'name:firstname'.</msg>
+<status status="PASS" starttime="20200911 10:23:27.796" endtime="20200911 10:23:28.006"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:27.269" endtime="20200911 10:23:28.006"></status>
+</kw>
+<kw name="Input Last Name" library="LPDemoResource">
+<arguments>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:lastname</arg>
+<arg>${last_name}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:28.009" level="INFO">Typing text 'yJqtSBIk' into text field 'name:lastname'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.008" endtime="20200911 10:23:28.274"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.007" endtime="20200911 10:23:28.275"></status>
+</kw>
+<kw name="Input Email" library="LPDemoResource">
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:28.278" level="INFO">Typing text 'seamusbreslin2@gmail.com' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.277" endtime="20200911 10:23:28.552"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.275" endtime="20200911 10:23:28.552"></status>
+</kw>
+<kw name="Input Phone Number" library="LPDemoResource">
+<arguments>
+<arg>${PHONE_NUMBER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:phone</arg>
+<arg>${phone_number}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:28.555" level="INFO">Typing text '09872360451' into text field 'name:phone'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.554" endtime="20200911 10:23:28.724"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.553" endtime="20200911 10:23:28.725"></status>
+</kw>
+<kw name="Input Job title" library="LPDemoResource">
+<arguments>
+<arg>${JOB_TITLE}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:jobtitle</arg>
+<arg>${job_title}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:28.728" level="INFO">Typing text 'Automation Engineer' into text field 'name:jobtitle'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.727" endtime="20200911 10:23:28.850"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.726" endtime="20200911 10:23:28.851"></status>
+</kw>
+<kw name="Input Company" library="LPDemoResource">
+<arguments>
+<arg>${COMPANY}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:company</arg>
+<arg>${company}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:28.855" level="INFO">Typing text 'testCompany' into text field 'name:company'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.853" endtime="20200911 10:23:28.997"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.852" endtime="20200911 10:23:28.997"></status>
+</kw>
+<kw name="Input Your Message" library="LPDemoResource">
+<arguments>
+<arg>${YOUR_MESSAGE}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>name:write_your_message_here_</arg>
+<arg>${your_message}</arg>
+</arguments>
+<msg timestamp="20200911 10:23:29.000" level="INFO">Typing text 'Hope your enjoying this demo!' into text field 'name:write_your_message_here_'.</msg>
+<status status="PASS" starttime="20200911 10:23:28.999" endtime="20200911 10:23:29.167"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:28.998" endtime="20200911 10:23:29.168"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:27.266" endtime="20200911 10:23:29.168"></status>
+</kw>
+<kw name="Implicit Wait" library="LPDemoResource">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>${WAIT}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:29.169" endtime="20200911 10:23:29.173"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:29.169" endtime="20200911 10:23:29.174"></status>
+</kw>
+<kw name="Assert Invalid Email" library="LPDemoResource">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ERROR_VALID_WORK_EMAIL_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${VALIDATE_EMAIL_ERROR1}</var>
+</assign>
+<msg timestamp="20200911 10:23:29.487" level="INFO">${VALIDATE_EMAIL_ERROR1} = Please enter your business email address. This form does not accept addresses from gmail.com.</msg>
+<status status="PASS" starttime="20200911 10:23:29.176" endtime="20200911 10:23:29.487"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${VALIDATE_EMAIL_ERROR1}</arg>
+<arg>${ERROR_VALID_WORK_EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 10:23:29.487" endtime="20200911 10:23:29.488"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:29.175" endtime="20200911 10:23:29.489"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200911 10:23:29.493" endtime="20200911 10:23:31.035"></status>
+</kw>
+<status status="PASS" starttime="20200911 10:23:10.864" endtime="20200911 10:23:31.036" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200911 10:22:27.288" endtime="20200911 10:23:31.038"></status>
+</suite>
+<status status="PASS" starttime="20200911 10:22:27.284" endtime="20200911 10:23:31.050"></status>
+</suite>
+<status status="PASS" starttime="20200911 10:22:27.246" endtime="20200911 10:23:31.059"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="LPDemo">LPDemo</stat>
+<stat pass="3" fail="0" id="s1-s1" name="LPDemoTestSuite">LPDemo.LPDemoTestSuite</stat>
+<stat pass="3" fail="0" id="s1-s1-s1" name="LPDemo GetInTouchTests">LPDemo.LPDemoTestSuite.LPDemo GetInTouchTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
